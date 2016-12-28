@@ -1,0 +1,28 @@
+---
+server:
+  port: 8889
+security:
+  basic:
+    enabled: true
+  user:
+    name: ruplim
+    password: ruplim
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/ruplim/cloud-config-chi-tolls
+          #username: uname
+          #password: pwd
+          search-paths:
+            - 'station*'
+          repos:
+            perf:
+             pattern:
+                - "*/perf"
+             uri: https://github.com/ruplim/cloud-config-chi-tolls-perf
+             search-paths:
+               - 'station*' 
+        encrypt:
+          enabled: false
